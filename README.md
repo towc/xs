@@ -87,7 +87,7 @@ cf----------
 
 here's the list of commands and their behaviour with flags
  - `.`: type the parameter and press enter
-  - `..`: don't press enter this time
+   - `..`: don't press enter this time
  - `*`: type the character specified in the parameter
  - `;`: a comment. The rest of the line is ignored
  - `f`: define a line in a macro/function. The flag is the name of the macro/function
@@ -99,6 +99,10 @@ here's the list of commands and their behaviour with flags
    - `+.`: and click
 
 empty lines are skipped
+
+Unrecognized commands make the program quit, which is useful when debugging up to a portion of it
+
+If more than 500 commands are used, the program will also quit, as it's likely you might have gotten in an infinite loop. You can change this limit on line 3 of the xs script. It will be added as an option (or as a command/variable maybe) later
 
 When something goes wrong, the macro history is echoed so you can see what might have gone wrong. `-` signifies exiting a macro
 
@@ -119,3 +123,8 @@ then all sorts of other flags, so you can keep keys pressed, or drag the cursor 
 This project is in the early stages, so if you have any recommendations/requests, make an issue so we can all discuss it together
 
 To contribute code, fork this repo, create a branch with the `fix/improvement/feature-<name>`, and submit a PR explaining what changed. Ideally make an issue before sending the PR, as you wouldn't want to write a lot of code and discover that actually this is conflicting with other possible features
+
+# desired philosophy
+These confscripts should be very easy to use, and make you more productive. I wouldn't want to add more nesting logic than macros and repeats. The second it's not naturally readable anymore, something went wrong. That said, it is currently hard-ish to read now, but I consider that to be in exchange for productivity. The syntax might get more complicated, but you should still always be able to only use the basic features without knowing much about the rest of it.
+
+I'd like to compare it to vim: it might be slightly weird to get used to at first, but once you figure out you can use `i` to get into insert mode `esc` to get out of it, and `:wq` to write and quit, you can technically do anything. and other features are kind of just an extension of that to make you much more productive. And just like here, vim commands are still fairly cryptic, even if I'd argue still human readable
