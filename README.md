@@ -128,3 +128,22 @@ To contribute code, fork this repo, create a branch with the `fix/improvement/fe
 These confscripts should be very easy to use, and make you more productive. I wouldn't want to add more nesting logic than macros and repeats. The second it's not naturally readable anymore, something went wrong. That said, it is currently hard-ish to read now, but I consider that to be in exchange for productivity. The syntax might get more complicated, but you should still always be able to only use the basic features without knowing much about the rest of it.
 
 I'd like to compare it to vim: it might be slightly weird to get used to at first, but once you figure out you can use `i` to get into insert mode `esc` to get out of it, and `:wq` to write and quit, you can technically do anything. and other features are kind of just an extension of that to make you much more productive. And just like here, vim commands are still fairly cryptic, even if I'd argue still human readable
+
+# TODO
+- decide what language to use
+- come up with a better name
+  - short
+  - available through that language/environment package manager
+- create a syntax that isn't just the first thing that comes up to mind
+  - multicharacter macros
+  - variables
+    - with substitution
+    - modifying behaviour like sleep time / max commands
+    - globals so you can change across multiple files
+  - parameters
+  - import from external files
+- write better docs
+- add a way to abort externally (ctrl+c maybe)
+- record mode, which auto-creates a confscript file for you to modify (like vim registers for macros, something like `xs --record some-file`)
+- take in files from arbitrary paths
+  -  should this include over the network? If on an insecure connection, this is easily the end of you. Also, simplifies other hacking scripts a bit too much
